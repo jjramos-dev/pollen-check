@@ -1,9 +1,11 @@
 # A very simple Bottle Hello World app for you to get started with...
 from bottle import route, run, template
 import requests
+import json
 
 @route('/')
 def hello_world():
+    response.content_type = 'application/json'
     r = requests.get('https://www.eltiempo.es/granada/polen')
 
     lista=r.text.split("<tr>")
@@ -34,7 +36,7 @@ def hello_world():
 
         estimacion[polen]=nivel
 
-    return "Hola"
+    return json.dumps(estimacion)
 
 # application = default_app()
 run(host='0.0.0.0', port=10000)
