@@ -36,5 +36,8 @@ def hello_world():
 
     return "Hola"
 
-application = default_app()
+# application = default_app()
+# Listen to HTTP on all interfaces
+if __name__ == '__main__':
+    run(host='0.0.0.0', port=10000)
 
