@@ -1,7 +1,7 @@
 # A very simple Bottle Hello World app for you to get started with...
 from bottle import route, run, template
 import requests
-import json
+import jsons
 
 @route('/')
 def hello_world():
@@ -36,7 +36,7 @@ def hello_world():
 
         estimacion[polen]=nivel
 
-    return json.dumps(estimacion)
+    return jsons.dump(estimacion)
 
 # application = default_app()
 run(host='0.0.0.0', port=10000)
