@@ -1,5 +1,5 @@
 # A very simple Bottle Hello World app for you to get started with...
-from bottle import default_app, route
+from bottle import route, run, template
 import requests
 
 @route('/')
@@ -37,7 +37,5 @@ def hello_world():
     return "Hola"
 
 # application = default_app()
-# Listen to HTTP on all interfaces
-if __name__ == '__main__':
-    run(host='0.0.0.0', port=10000)
+run(host='0.0.0.0', port=10000)
 
